@@ -1,6 +1,9 @@
 test("sentiment analysis API", async () => {
-  const text = "Today is a wonderful day";
-  const { result: { sentiment } } = await client.api.getSentiment({ text });
+  const input = "Today is a wonderful day";
+  const { result } = await client.api.getSentiment({ input });
 
-  expect(typeof sentiment).toBe("number");
+  expect(result.length).toBeGreaterThan(0);
+
+  const sentimentSample = result[0].score;
+  expect(typeof sentimentSample).toBe("number");
 });

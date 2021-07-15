@@ -1,12 +1,11 @@
-test("commonsense reasoning API", async () => {
+test("conceptnet grounding API", async () => {
   const input = "Today is a wonderful day";
-  const category = "xAttr";
-
+  const relation = "CapableOf";
   const {
     result: { predictions },
-  } = await client.api.commonsenseReasoning({
+  } = await client.api.getConceptnetRelations({
     input,
-    category,
+    relation,
   });
 
   expect(predictions.length).toBeGreaterThan(0);

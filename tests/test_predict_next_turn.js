@@ -1,23 +1,23 @@
 test("predictNextTurn API", async () => {
   const history = [
-    "Hi. Welcome to pizza hut.",
-    "I want to order a pizza.",
-    "What size would you like?",
-    "What sizes are available?"
+    { agent: "BOT", said: "Hi. Welcome to pizza hut." },
+    { agent: "USER", said: "I want to order a pizza." },
+    { agent: "BOT", said: "What size would you like?" },
+    { agent: "USER", said: "What sizes are available?" },
   ];
 
-  const alternatives = [
+  const input = [
     "Sorry but that's not on our menu",
     "We have small, medium and large sizes available",
-    "I have added this to your cart"
+    "I have added this to your cart",
   ];
 
-  const { result } = await client.api.predictNextTurn({ history, alternatives });
+  const {
+    result: { nextTurns },
+  } = await client.api.predictNextTurn({ history, input });
 
-  const sorted = result.sort((a, b) => a.confidence - b.confidence);
-  const predicted = sorted[sorted.length-1];
+  const sorted = nextTurns.sort((a, b) => a.score - b.score);
+  const predicted = sorted[sorted.length - 1];
 
-  expect(predicted.nextTurn).toEqual(alternatives[1]);
+  expect(predicted.alternative).toEqual(input[1]);
 });
-
-
