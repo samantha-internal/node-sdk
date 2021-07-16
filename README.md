@@ -2,7 +2,7 @@
 
 ## Features
 
-- Docs can be found [here](https://whitehead-ai.github.io/sdk).
+- Docs can be found [here](https://whitehead-ai.github.io/node-sdk).
 - Typesafe queries. Written in typescript.
 - Bindings are included in the package.
 - Bindings for _reasonml/bucklescript/rescript_ and _flow.js_ coming soon.
@@ -33,7 +33,7 @@ whitehead-playground
 
 #### Playground screenshot
 
-![Playground screenshot](https://github.com/whitehead-ai/sdk/raw/main/assets/whitehead_playground_screenshot.png?raw=true "Playground screenshot")
+![Playground screenshot](https://github.com/whitehead-ai/node-sdk/raw/main/assets/whitehead_playground_screenshot.png?raw=true "Playground screenshot")
 
 ### Usage as an SDK
 
