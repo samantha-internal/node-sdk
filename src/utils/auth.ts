@@ -25,7 +25,8 @@ export type tokenPayload = {
 };
 
 export type authResponseData = {
-  enc_token: encryptedString;
+  enc_token?: encryptedString;
+  error?: string;
 };
 
 export type JWT = string;
@@ -63,6 +64,10 @@ export function decodeJWT(
 ): JWT {
   const key = generateEncryptionKey(apiKey, nonce);
   const { enc_token } = response;
+
+  if (enc_token === undefined || enc_token.length === 0) {
+    throw "Encrypted token must be non-empty string!";
+  }
 
   return decode(enc_token, key);
 }
