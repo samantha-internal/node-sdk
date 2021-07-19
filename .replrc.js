@@ -62,7 +62,7 @@ const code_sample = theme.code(
 );
 
 const docs = theme.normal(
-  `You can see the list of APIs at ${theme.link("https://github.com/whitehead-ai/sdk#readme")}`
+  `You can see the list of APIs at ${theme.link("https://github.com/whitehead-ai/node-sdk#readme")}`
 );
 
 const varsInfo = chalk.dim("Globals: " + theme.code(Object.keys(context).join(", ")));

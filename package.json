@@ -35,14 +35,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/whitehead-ai/sdk.git"
+        "url": "git+https://github.com/whitehead-ai/node-sdk.git"
     },
     "author": "diwank@whitehead.ai",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/whitehead-ai/sdk/issues"
+        "url": "https://github.com/whitehead-ai/node-sdk/issues"
     },
-    "homepage": "https://github.com/whitehead-ai/sdk#readme",
+    "homepage": "https://github.com/whitehead-ai/node-sdk#readme",
     "devDependencies": {
         "@graphql-codegen/cli": "1.21.1",
         "@graphql-codegen/time": "^2.0.2",
