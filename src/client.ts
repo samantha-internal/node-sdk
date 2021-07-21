@@ -25,6 +25,9 @@ export class Client extends GraphQLClient {
     if (!jwt) {
       const [exchangeToken, nonce] = createExchangeToken(apiKey);
       const authData = await requestJWT(developerId, exchangeToken);
+      if (authData.enc_token === undefined) {
+        throw (authData.error || "Unknown authentication error!");
+      }
       jwt = decodeJWT(authData, apiKey, nonce);
       cache.write(jwt);
     }
