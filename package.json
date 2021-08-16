@@ -1,6 +1,6 @@
 {
     "name": "@whitehead/sdk",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Code generated from Whitehead API schema for CLI, SDK etc",
     "main": "./cjs/index.js",
     "module": "./esm/index.js",
