@@ -1,6 +1,8 @@
-test("sentiment analysis API", async () => {
+test("sentiment API", async () => {
   const input = "Today is a wonderful day";
-  const { result } = await client.api.getSentiment({ input });
+  const {
+    callSentiment: { result },
+  } = await client.api.sentiment({ input });
 
   expect(result.length).toBeGreaterThan(0);
 
