@@ -1,3 +1,20 @@
+/**
+
+class HighLevelClient extends Client {
+  async function paraphrase(input) {
+
+    const {
+      callParaphrase: { result },
+    } = await this.api.paraphrase({ input });
+
+    return result;
+  }
+}
+
+const result = await client.paraphrase(input);
+
+*/
+
 describe("paraphrase API", () => {
   test("news summary", async () => {
     const input = `zairean rebels , led by laurent-desire kabila , on saturday rejected calls by the united nations for a ceasefire , saying it could only be called after talks
