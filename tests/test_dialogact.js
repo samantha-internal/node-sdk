@@ -2,9 +2,7 @@ describe("dialogact API", () => {
   test("Statement-non-opinion", async () => {
     const input = "I'll probably go shopping today.";
 
-    const {
-      callDialogact: { result },
-    } = await client.api.dialogact({ input });
+    const result = await client.dialogact(input);
 
     expect(result).toBe("Statement-non-opinion");
   });
@@ -12,9 +10,7 @@ describe("dialogact API", () => {
   test("Acknowledge (Backchannel)", async () => {
     const input = "Yeah";
 
-    const {
-      callDialogact: { result },
-    } = await client.api.dialogact({ input });
+    const result = await client.dialogact(input);
 
     expect(result).toBe("Acknowledge (Backchannel)");
   });
@@ -22,9 +18,7 @@ describe("dialogact API", () => {
   test("Statement-opinion", async () => {
     const input = "I think it's not bad";
 
-    const {
-      callDialogact: { result },
-    } = await client.api.dialogact({ input });
+    const result = await client.dialogact(input);
 
     expect(result).toBe("Statement-opinion");
   });
@@ -32,9 +26,7 @@ describe("dialogact API", () => {
   test("Agree/Accept", async () => {
     const input = "That is correct";
 
-    const {
-      callDialogact: { result },
-    } = await client.api.dialogact({ input });
+    const result = await client.dialogact(input);
 
     expect(result).toBe("Agree/Accept");
   });
@@ -42,9 +34,7 @@ describe("dialogact API", () => {
   test("Appreciation", async () => {
     const input = "I can imagine.";
 
-    const {
-      callDialogact: { result },
-    } = await client.api.dialogact({ input });
+    const result = await client.dialogact(input);
 
     expect(result).toBe("Appreciation");
   });
@@ -52,9 +42,7 @@ describe("dialogact API", () => {
   test("Yes-No-Question", async () => {
     const input = "Is that so?";
 
-    const {
-      callDialogact: { result },
-    } = await client.api.dialogact({ input });
+    const result = await client.dialogact(input);
 
     expect(result).toBe("Yes-No-Question");
   });
@@ -62,9 +50,7 @@ describe("dialogact API", () => {
   test("Conventional-closing", async () => {
     const input = "Well see you later";
 
-    const {
-      callDialogact: { result },
-    } = await client.api.dialogact({ input });
+    const result = await client.dialogact(input);
 
     expect(result).toBe("Conventional-closing");
   });

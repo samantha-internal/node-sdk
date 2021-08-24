@@ -1,27 +1,8 @@
-/**
-
-class HighLevelClient extends Client {
-  async function paraphrase(input) {
-
-    const {
-      callParaphrase: { result },
-    } = await this.api.paraphrase({ input });
-
-    return result;
-  }
-}
-
-const result = await client.paraphrase(input);
-
-*/
-
 describe("paraphrase API", () => {
   test("news summary", async () => {
     const input = `zairean rebels , led by laurent-desire kabila , on saturday rejected calls by the united nations for a ceasefire , saying it could only be called after talks
     with kinshasa .`;
-    const {
-      callParaphrase: { result },
-    } = await client.api.paraphrase({ input });
+    const result = await client.paraphrase(input);
 
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBeGreaterThan(0);
@@ -44,9 +25,7 @@ describe("paraphrase API", () => {
     is the perfect age to begin an instrument). Exercise is another way to feel comfortable in your body and boost your self-esteem. You can reach a
     confident state of mind by dressing ... ... ...`;
 
-    const {
-      callParaphrase: { result },
-    } = await client.api.paraphrase({ input });
+    const result = await client.paraphrase(input);
 
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBeGreaterThan(0);

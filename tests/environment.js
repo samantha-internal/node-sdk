@@ -7,11 +7,15 @@ class WhiteheadEnvironment extends NodeEnvironment {
 
     const {
       WHITEHEAD_DEVELOPER_ID: developerId,
-      WHITEHEAD_API_KEY: apiKey
+      WHITEHEAD_API_KEY: apiKey,
     } = process.env;
 
-    const client = new Whitehead({ apiKey, developerId: parseInt(developerId), });
+    const client = new Whitehead({
+      apiKey,
+      developerId: parseInt(developerId),
+    });
     await client.initialize();
+    // console.log(WhiteheadWrapper);
 
     this.global.client = client;
   }

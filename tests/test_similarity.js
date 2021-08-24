@@ -3,11 +3,7 @@ describe("similarity API", () => {
     const input = "I want to order a pizza.";
     const candidates = ["It is a great day today.", "Can I have a pizza?"];
 
-    const {
-      callSimilarity: { result },
-    } = await client.api.similarity({ input, candidates });
-
-    console.log(result);
+    const result = await client.similarity(input, { candidates });
 
     const sorted = result.sort((a, b) => a.score - b.score);
     const mostSimilar = sorted[sorted.length - 1];

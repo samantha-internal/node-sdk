@@ -3,9 +3,7 @@ describe("topics API", () => {
     const input = "Some fruits, like bananas, can be worn on top of a kimono";
     const topics = ["banana", "rockets", "fashion"];
 
-    const {
-      callTopics: { result },
-    } = await client.api.topics({ input, topics, allow_multiple: true });
+    const result = await client.topics(input, { topics });
 
     expect(result[0].topic).toBe("banana");
     expect(result[1].topic).toBe("fashion");
@@ -16,9 +14,7 @@ describe("topics API", () => {
     const input = "My item was not delivered. Can you please help?";
     const topics = ["missing package", "refund", "stolen package", "urgent"];
 
-    const {
-      callTopics: { result },
-    } = await client.api.topics({ input, topics, allow_multiple: true });
+    const result = await client.topics(input, { topics });
 
     expect(result[0].topic).toBe("missing package");
     expect(result[1].topic).toBe("urgent");

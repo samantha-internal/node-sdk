@@ -2,12 +2,7 @@ describe("relations API", () => {
   test("PartOf", async () => {
     const input = "wheel";
     const relation = "PartOf";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("bicycle");
@@ -16,12 +11,7 @@ describe("relations API", () => {
   test("IsA", async () => {
     const input = "bread";
     const relation = "IsA";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("food");
@@ -30,12 +20,7 @@ describe("relations API", () => {
   test("AtLocation", async () => {
     const input = "jackhammer";
     const relation = "AtLocation";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("hardware store");
@@ -44,12 +29,7 @@ describe("relations API", () => {
   test("Causes", async () => {
     const input = "art";
     const relation = "Causes";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[2]).toBe("person to be happy");
@@ -58,12 +38,7 @@ describe("relations API", () => {
   test("CapableOf", async () => {
     const input = "news";
     const relation = "CapableOf";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("spread fast");
@@ -72,12 +47,7 @@ describe("relations API", () => {
   test("HasProperty", async () => {
     const input = "black hole";
     const relation = "HasProperty";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("very dangerous");
@@ -86,12 +56,7 @@ describe("relations API", () => {
   test("HasA", async () => {
     const input = "Europe";
     const relation = "HasA";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("many tourist attraction");
@@ -100,12 +65,7 @@ describe("relations API", () => {
   test("UsedFor", async () => {
     const input = "lithium";
     const relation = "UsedFor";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("make electricity");
@@ -114,12 +74,7 @@ describe("relations API", () => {
   test("HasPrerequisite", async () => {
     const input = "world peace";
     const relation = "HasPrerequisite";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[5]).toBe("cooperation between country");
@@ -128,12 +83,7 @@ describe("relations API", () => {
   test("HasLastSubevent", async () => {
     const input = "live";
     const relation = "HasLastSubevent";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("die");
@@ -142,12 +92,7 @@ describe("relations API", () => {
   test("HasSubevent", async () => {
     const input = "running";
     const relation = "HasSubevent";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("get tire");
@@ -156,12 +101,7 @@ describe("relations API", () => {
   test("MotivatedByGoal", async () => {
     const input = "going to the hospital";
     const relation = "MotivatedByGoal";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("go see doctor");
@@ -170,12 +110,7 @@ describe("relations API", () => {
   test("ReceivesAction", async () => {
     const input = "computer";
     const relation = "ReceivesAction";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[9]).toBe("program");
@@ -184,12 +119,7 @@ describe("relations API", () => {
   test("MadeOf", async () => {
     const input = "diamond";
     const relation = "MadeOf";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[2]).toBe("carbon");
@@ -198,12 +128,7 @@ describe("relations API", () => {
   test("SymbolOf", async () => {
     const input = "red";
     const relation = "SymbolOf";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("passion");
@@ -212,12 +137,7 @@ describe("relations API", () => {
   test("DefinedAs", async () => {
     const input = "banana";
     const relation = "DefinedAs";
-    const {
-      callRelations: { result },
-    } = await client.api.relations({
-      input,
-      relation,
-    });
+    const result = await client.relations(input, { relation });
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0]).toBe("fruit of plant");

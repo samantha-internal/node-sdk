@@ -1,9 +1,7 @@
 describe("sentiment API", () => {
   test("positive", async () => {
     const input = "Today is a wonderful day";
-    const {
-      callSentiment: { result },
-    } = await client.api.sentiment({ input });
+    const result = await client.sentiment(input);
 
     expect(result.length).toBeGreaterThan(0);
 
@@ -13,9 +11,7 @@ describe("sentiment API", () => {
 
   test("negative", async () => {
     const input = "I don't like the weather";
-    const {
-      callSentiment: { result },
-    } = await client.api.sentiment({ input });
+    const result = await client.sentiment(input);
 
     expect(result.length).toBeGreaterThan(0);
 
@@ -25,11 +21,7 @@ describe("sentiment API", () => {
 
   test("neutral", async () => {
     const input = "This is my car";
-    const {
-      callSentiment: { result },
-    } = await client.api.sentiment({ input });
-
-    console.log(result);
+    const result = await client.sentiment(input);
 
     expect(result.length).toBeGreaterThan(0);
 

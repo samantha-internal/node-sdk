@@ -13,9 +13,7 @@ describe("chitchat API", () => {
       },
     ];
 
-    const {
-      callChitchat: { result },
-    } = await client.api.chitchat({ input, history });
+    const result = await client.chitchat(input, { history });
 
     expect(result).toBe("It's not that difficult. Just be a millionaire.");
   });
@@ -23,9 +21,7 @@ describe("chitchat API", () => {
   test("commonsense questions example", async () => {
     const input = "Who is the first president of the United States?";
 
-    const {
-      callChitchat: { result },
-    } = await client.api.chitchat({ input, history: [] });
+    const result = await client.chitchat(input, { history: [] });
 
     expect(result).toBe("George Washington");
   });
@@ -33,9 +29,7 @@ describe("chitchat API", () => {
   test("philosophy questions example", async () => {
     const input = "What is the meaning of life?";
 
-    const {
-      callChitchat: { result },
-    } = await client.api.chitchat({ input, history: [] });
+    const result = await client.chitchat(input, { history: [] });
 
     expect(result).toBe("To be a good boy.");
   });
