@@ -153,6 +153,17 @@ Takes text (`string`) as input and returns audio encoded as a base64 string.
 speak: (input: string): string => result; // base64 encoded audio
 ```
 
+### topics
+
+Mine topics from a given input
+
+```typescript
+topics: (
+  input: string,
+  options: { topics: string[] }
+): { score: number; topic: string }[] => result;
+```
+
 ### transcribe
 
 Takes base64 encoded audio as input and returns a list of possible transcripts (sorted in order of decreasing confidence).
