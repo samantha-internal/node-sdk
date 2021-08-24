@@ -13,11 +13,7 @@ describe("sensibility API", () => {
       "I have added this to your cart",
     ];
 
-    const {
-      callSensibility: { result },
-    } = await client.api.sensibility({ history, input });
-
-    console.log(result);
+    const result = await client.sensibility(input, { history });
 
     const sorted = result.sort((a, b) => a.score - b.score);
     const predicted = sorted[sorted.length - 1];
